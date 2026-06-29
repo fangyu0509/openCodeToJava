@@ -1,5 +1,7 @@
 # openCodeToJava
 
+声明：这是自学的资料，如果涉及到侵权请联系我，本人正在转AI的道路上探索，如果有兴趣一起学习的朋友也可以联系我
+
 [opencode](https://opencode.ai) AI 编程助手的 Java + Spring Boot 移植版，保留了原版的核心能力并加入 Java 生态集成。
 
 ## 特性
