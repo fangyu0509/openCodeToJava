@@ -1,0 +1,11 @@
+target/
+*.class
+*.jar
+*.war
+.idea/
+*.iml
+.vscode/
+opencode.json
+vscode-opencode/node_modules/
+vscode-opencode/out/
+vscode-opencode/*.vsix

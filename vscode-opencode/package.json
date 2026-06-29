@@ -1,0 +1,65 @@
+{
+  "name": "opencode",
+  "displayName": "OpenCode",
+  "description": "AI coding assistant with tool access",
+  "version": "0.1.0",
+  "publisher": "opencode",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Chat",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "opencode.chat",
+        "title": "OpenCode: Open Chat"
+      },
+      {
+        "command": "opencode.startServer",
+        "title": "OpenCode: Start Server"
+      },
+      {
+        "command": "opencode.stopServer",
+        "title": "OpenCode: Stop Server"
+      }
+    ],
+    "configuration": {
+      "title": "OpenCode",
+      "properties": {
+        "opencode.serverPort": {
+          "type": "number",
+          "default": 8080,
+          "description": "Port for the OpenCode backend server"
+        },
+        "opencode.serverJar": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the OpenCode server JAR (optional; leave empty for auto-detect)"
+        },
+        "opencode.autoStartServer": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-start the OpenCode server when VSCode starts"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}

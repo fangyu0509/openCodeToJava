@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  opencode:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OPENCODE_SEARCH_API_KEY=${OPENCODE_SEARCH_API_KEY:-}
+      - OPENCODE_SEARCH_ENDPOINT=${OPENCODE_SEARCH_ENDPOINT:-}
+    volumes:
+      - opencode-data:/data
+      - ${PWD:-.}:/workspace
+    working_dir: /workspace
+
+volumes:
+  opencode-data:
